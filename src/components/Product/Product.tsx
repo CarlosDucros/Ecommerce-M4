@@ -2,9 +2,11 @@
 import { getProduct } from "@/helpers";
 import { CartButton } from "../CartButton/CartButton";
 import Link from "next/link";
-const Product: React.FC = async (params: any) => {
-  const product = await getProduct(params.id.id);
+import { IProductProps } from "@/types";
+const Product: React.FC<IProductProps> = async ({ id }) => {
+  const product = await getProduct(Number(id));
   console.log(product);
+
   if (!product) {
     return <h1>Product not found</h1>;
   }

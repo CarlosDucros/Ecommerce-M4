@@ -101,9 +101,7 @@ export interface DeleteButtonProps {
 }
 
 export interface IProductProps {
-  id: {
-    id: string;
-  };
+  id: string;
 }
 export interface IUserNoCredentials {
   [item: string]: string;
