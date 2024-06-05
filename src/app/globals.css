@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: var(--Background, #10002b);
+  font-family: Jost;
+  font-feature-settings: "clig" off, "liga" off;
+}
+
+.categoryContainer {
+  @apply flex items-center justify-center md:bg-dark-purple rounded-full w-20 h-20 md:w-24 md:h-24 lg:w-40 lg:h-40;
+}
+
+.category {
+  @apply flex flex-col items-center text-center text-xs lg:text-base w-4 lg:w-16;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%) rotate(60deg); /* Rotación inicial aumentada a 60 grados */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}

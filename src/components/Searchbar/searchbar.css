@@ -1,0 +1,13 @@
+.lensIcon {
+  background-image: url(../../../public/Search.svg);
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 40px;
+}
+
+.placeholder {
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

@@ -1,0 +1,34 @@
+.input-effect {
+  position: relative;
+  padding: 8px 0;
+  border-bottom: 2px solid var(--border-dark);
+  transition: border-color 0.3s ease;
+}
+
+.input-effect::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--border-soft);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.input-effect:focus::before {
+  width: 100%;
+  left: 0;
+  transform: translateX(0);
+}
+
+.input-effect:focus {
+  border-color: transparent; /* Optional: hide the original border during animation */
+}
+
+/* CSS Variables for colors */
+:root {
+  --border-dark: #4a4a4a;
+  --border-soft: #b39ddb;
+}
