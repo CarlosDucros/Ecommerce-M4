@@ -5,7 +5,6 @@ import Link from "next/link";
 import { IProductProps } from "@/types";
 const Product: React.FC<IProductProps> = async ({ id }) => {
   const product = await getProduct(Number(id));
-  console.log(product);
 
   if (!product) {
     return <h1>Product not found</h1>;
