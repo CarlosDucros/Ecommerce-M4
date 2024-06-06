@@ -90,7 +90,7 @@ export const getProducts = async (): Promise<IProduct[]> => {
     const response = await fetch(`${NEXT_PUBLIC_API_URL}/products`, {
       headers: {
         "Content-Type": "application/json",
-        "ngrok-skip-browser": "true",
+        "ngrok-skip-browser-warning": "true",
       },
     });
     const products: IProduct[] = await response.json();
@@ -134,7 +134,7 @@ export const postOrder = async (
       headers: {
         Authorization: token,
         "Content-Type": "application/json",
-        "ngrok-skip-browser": "true",
+        "ngrok-skip-browser-warning": "true",
       },
     });
 
