@@ -34,7 +34,7 @@ const RegisterContainer: React.FC = () => {
           Have you already created an account?
           <br />
           <Link
-            href="/register"
+            href="/login"
             className=" text-purple-950 font-bold text-center hover:text-soft-purple">
             Sign in here
           </Link>
