@@ -1,10 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
 import { getProduct } from "@/helpers";
 import { CartButton } from "../CartButton/CartButton";
 import Link from "next/link";
-import { IProductProps } from "@/types";
-const Product: React.FC<IProductProps> = async ({ id }) => {
-  const product = await getProduct(Number(id));
+import { IProduct, IProductProps } from "@/types";
+import { useEffect, useState } from "react";
+const Product: React.FC<IProductProps> = ({ id }) => {
+  const [product, setProduct] = useState<IProduct>();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const product = await getProduct(Number(id));
+      setProduct(product);
+    };
+    fetchData();
+  }, []);
 
   if (!product) {
     return <h1>Product not found</h1>;
