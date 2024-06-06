@@ -1,4 +1,4 @@
-import { IOrder, IProduct, IUser } from "@/types";
+import { IOrder, IProduct } from "@/types";
 import axios from "axios";
 import { NEXT_PUBLIC_API_URL } from "../../envs";
 import { UserLoginDto, UserRegisterDto } from "@/dto/userDto";
@@ -33,7 +33,7 @@ export const postUserRegister = async (user: UserRegisterDto) => {
   } catch (error: any) {
     Toastify({
       duration: 2500,
-      text: error.response.data.message,
+      text: "Error creating user",
       newWindow: true,
       close: true,
       position: "right",
@@ -72,7 +72,7 @@ export const postUserLogin = async (user: UserLoginDto) => {
   } catch (error: any) {
     Toastify({
       duration: 2500,
-      text: error.response.data.message,
+      text: "User not found",
       newWindow: true,
       close: true,
       position: "right",
@@ -97,7 +97,7 @@ export const getProducts = async (): Promise<IProduct[]> => {
   } catch (error: any) {
     Toastify({
       duration: 2500,
-      text: error.response.data.message,
+      text: "Products not found",
       newWindow: true,
       close: true,
       position: "right",
@@ -178,6 +178,7 @@ export const getOrders = async (token: string): Promise<IOrder[]> => {
       cache: "no-cache",
       headers: {
         Authorization: token,
+        "ngrok-skip-browser-warning": "true",
       },
     });
     const orders: IOrder[] = await response.json();
@@ -185,7 +186,7 @@ export const getOrders = async (token: string): Promise<IOrder[]> => {
   } catch (error) {
     Toastify({
       duration: 2500,
-      text: error.response.data.message,
+      text: "Orders not found",
       newWindow: true,
       close: true,
       position: "right",
