@@ -27,7 +27,7 @@ const Login: React.FC = () => {
             return obj;
           }, {});
 
-        localStorage.setItem("user", JSON.stringify(userFilter[0]));
+        localStorage.setItem("user", JSON.stringify(userFilter));
 
         setToken(res.token);
         setUserData(res.user);
