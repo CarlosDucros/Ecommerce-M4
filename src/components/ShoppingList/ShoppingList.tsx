@@ -12,10 +12,15 @@ export const ShoppingList: React.FC = () => {
   const token: string = localStorage.getItem("token");
 
   useEffect(() => {
-    getOrders(token)
-      .then((data: IOrder[]) => setOrders(data))
-      .catch((err: any) => console.error(err));
+    if (token) {
+      getOrders(token)
+        .then((data: IOrder[]) => {
+          setOrders(data);
+        })
+        .catch((err: any) => console.error(err));
+    }
   }, [token]);
+  console.log(orders);
 
   return (
     <>
