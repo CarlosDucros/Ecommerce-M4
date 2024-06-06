@@ -19,7 +19,6 @@ const Login: React.FC = () => {
         setCart([]);
         localStorage.setItem("token", res.token);
         const userRes: IUser = res.user;
-        console.log(userRes);
 
         const userFilter = Object.keys(userRes)
           .filter((item) => item !== "credential")
