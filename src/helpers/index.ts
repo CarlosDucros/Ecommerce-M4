@@ -11,6 +11,7 @@ export const postUserRegister = async (user: UserRegisterDto) => {
       {
         headers: {
           "Content-Type": "application/json",
+          "ngrok-skip-browser-warning": "true",
         },
       }
     );
@@ -52,6 +53,7 @@ export const postUserLogin = async (user: UserLoginDto) => {
       {
         headers: {
           "Content-Type": "application/json",
+          "ngrok-skip-browser-warning": "true",
         },
       }
     );
@@ -88,6 +90,7 @@ export const getProducts = async (): Promise<IProduct[]> => {
     const response = await fetch(`${NEXT_PUBLIC_API_URL}/products`, {
       headers: {
         "Content-Type": "application/json",
+        "ngrok-skip-browser": "true",
       },
     });
     const products: IProduct[] = await response.json();
@@ -131,6 +134,7 @@ export const postOrder = async (
       headers: {
         Authorization: token,
         "Content-Type": "application/json",
+        "ngrok-skip-browser": "true",
       },
     });
 
